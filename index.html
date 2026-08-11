@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jananisen Natarajan | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1020;
+            border-bottom: 1px solid #252d45;
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tag {
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #6c63ff;
+        }
+
+        .hero p {
+            color: #aab3ca;
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #333b55;
+        }
+
+        .primary {
+            background: #6c63ff;
+        }
+
+        .secondary:hover {
+            background: #6c63ff;
+        }
+
+        /* PROFILE CARD */
+        .profile-card {
+            background: #121a2f;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #252d45;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6c63ff, #00d4ff);
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .profile-card p {
+            color: #aab3ca;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #aab3ca;
+            margin-bottom: 30px;
+        }
+
+        /* CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #121a2f;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #252d45;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .card p,
+        .card li {
+            color: #aab3ca;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #1a2541;
+            padding: 10px 18px;
+            border-radius: 30px;
+            border: 1px solid #333b55;
+        }
+
+        /* EDUCATION */
+        .education {
+            border-left: 3px solid #6c63ff;
+            padding-left: 25px;
+        }
+
+        .education strong {
+            color: #00d4ff;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: #121a2f;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #252d45;
+        }
+
+        .project-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #aab3ca;
+            margin: 10px 0;
+        }
+
+        .project a {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #252d45;
+        }
+
+        .contact-item span {
+            display: block;
+            color: #aab3ca;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #aab3ca;
+            border-top: 1px solid #252d45;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                Jananisen<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div>
+
+                <div class="tag">
+                    BCA Student • Full Stack Aspirant
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Jananisen</span>.
+                </h1>
+
+                <p>
+                    Motivated BCA student passionate about web development,
+                    programming and learning modern technologies through
+                    hands-on projects.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn primary">
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="btn secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="avatar">
+                    JN
+                </div>
+
+                <h2>
+                    Jananisen Natarajan
+                </h2>
+
+                <p>
+                    Full Stack Developer Aspirant
+                </p>
+
+                <p>
+                    BCA • 2024–2027
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <p class="section-subtitle">
+                A quick introduction
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>
+                        Career Objective
+                    </h3>
+
+                    <p>
+                        Seeking an opportunity to start my career as a
+                        Full Stack Developer in a reputable MNC.
+                        I enjoy learning new technologies and improving
+                        my programming skills through hands-on practice
+                        and independent project development.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Core Strengths
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Self-motivated and committed to continuous learning
+                        </li>
+
+                        <li>
+                            Quick learner
+                        </li>
+
+                        <li>
+                            Problem solving and analytical thinking
+                        </li>
+
+                        <li>
+                            Effective communication
+                        </li>
+
+                        <li>
+                            Team collaboration
+                        </li>
+
+                        <li>
+                            Positive attitude and adaptability
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Technical Skills
+            </h2>
+
+            <p class="section-subtitle">
+                Technologies and concepts I'm learning
+            </p>
+
+            <div class="card">
+
+                <div class="skills">
+
+                    <div class="skill">
+                        Python
+                    </div>
+
+                    <div class="skill">
+                        HTML5
+                    </div>
+
+                    <div class="skill">
+                        CSS3
+                    </div>
+
+                    <div class="skill">
+                        Git
+                    </div>
+
+                    <div class="skill">
+                        GitHub
+                    </div>
+
+                    <div class="skill">
+                        VS Code
+                    </div>
+
+                    <div class="skill">
+                        Web Development
+                    </div>
+
+                    <div class="skill">
+                        Logical Programming
+                    </div>
+
+                    <div class="skill">
+                        Frontend Design
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+            <p class="section-subtitle">
+                My academic journey
+            </p>
+
+            <div class="card education">
+
+                <strong>
+                    2024 – 2027
+                </strong>
+
+                <h3>
+                    Bachelor of Computer Applications (BCA)
+                </h3>
+
+                <p>
+                    Theivanai Ammal College for Women,
+                    Villupuram
+                </p>
+
+                <p>
+                    Focusing on programming fundamentals,
+                    data structures and modern web architecture.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+            <p class="section-subtitle">
+                My projects and practical work
+            </p>
+
+            <div class="projects">
+
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Education Website
+                    </h3>
+
+                    <p>
+                        A responsive education platform concept
+                        designed for students and teachers.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Web Design Project
+                    </h3>
+
+                    <p>
+                        A frontend project demonstrating HTML,
+                        CSS and responsive web design.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        🐍
+                    </div>
+
+                    <h3>
+                        Python Projects
+                    </h3>
+
+                    <p>
+                        Programming projects focused on logic,
+                        arrays, data structures and problem solving.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Contact Me
+            </h2>
+
+            <p class="section-subtitle">
+                Let's connect
+            </p>
+
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <div class="contact-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        jananisennatarajan@gmail.com
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            GitHub
+                        </span>
+
+                        <a href="https://github.com/jananisennatarajan"
+                           target="_blank">
+
+                            github.com/jananisennatarajan
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            LinkedIn
+                        </span>
+
+                        <a href="https://www.linkedin.com/in/jananisen-natarajan-142471383"
+                           target="_blank">
+
+                            Jananisen Natarajan
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        8124156851
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Languages
+                    </h3>
+
+                    <p>
+                        Tamil • English
+                    </p>
+
+                    <br>
+
+                    <h3>
+                        Hobbies
+                    </h3>
+
+                    <p>
+                        Dancing • Singing
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 Jananisen Natarajan.
+        All Rights Reserved.
+
+    </footer>
+
+</body>
+</html>
